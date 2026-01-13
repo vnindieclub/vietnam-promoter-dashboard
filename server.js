@@ -12,11 +12,8 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
-// Start server for local development
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`Promoter Dashboard running at http://localhost:${PORT}`);
-});
-
-// CRITICAL: Export the app for Vercel's handler
+if (process.env.NODE_ENV !== 'production') {
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => console.log(`Local dev: http://localhost:${PORT}`));
+}
 module.exports = app;
