@@ -12,3 +12,4 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Promoter Calculator running at http://localhost:${PORT}`);
 });
+module.exports = app;
