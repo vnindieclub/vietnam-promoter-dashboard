@@ -159,7 +159,7 @@
         } else if (tickets <= 800) {
             revCost = 80000000; opCost = 70000000; marketCeiling = 850000; tierName = "Event Hall";
         } else {
-            revCost = 200000000; opCost = 300000000; marketCeiling = 1500000; tierName = "Stadium/Arena";
+            revCost = 200000000; opCost = 300000000; marketCeiling = 1500000; tierName = "Arena";
         }
 
         const totalCost = revCost + opCost;
@@ -204,7 +204,7 @@ if (isAffordable && isProfitable) {
     if (!isProfitable && isAffordable) {
         note.innerText = `The price is affordable for fans, but your current settings result in a LOSS. Increase ticket price or volume to reach profitability.`;
     } else if (isProfitable && !isAffordable) {
-        note.innerText = `You are making profit, but the price required to sustain your 60% margin (${Math.round(suggestedPrice).toLocaleString()} ₫) exceeds the local market limit for ${tierName}s.`;
+        note.innerText = `You are making profit, but the price required to sustain your 40% margin (${Math.round(suggestedPrice).toLocaleString()} ₫) exceeds the local market limit for ${tierName}s.`;
     } else {
         note.innerText = `This model is neither profitable nor affordable for the Vietnamese market. Significant adjustments to costs or volume are required.`;
     }
